@@ -1,0 +1,19 @@
+.nav {
+  width: 100%;
+  padding: 20px;
+}
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 40%;
+  margin: auto;
+}
+.navcontainer li {
+  font-size: 20px;
+  color: #949494;
+}
+.navcontainer .active {
+  color: #292929;
+  font-size: 25px;
+}

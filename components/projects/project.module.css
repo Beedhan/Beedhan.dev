@@ -1,0 +1,9 @@
+.projectCard {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 7%;
+  background-color: tomato;
+  color: white;
+  margin: 20px 0px;
+  border-radius: 20px;
+}

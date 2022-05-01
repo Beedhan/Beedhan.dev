@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: JetBrains Mono;
+  box-sizing: border-box;
 }
 
 a {
@@ -13,4 +13,30 @@ a {
 
 * {
   box-sizing: border-box;
+}
+@keyframes hi_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.hii {
+  position: absolute;
+  top: -10px;
+  transform-origin: bottom;
+  cursor: pointer;
+}
+.hii:hover {
+  animation: hi_animation 1000ms linear infinite;
 }

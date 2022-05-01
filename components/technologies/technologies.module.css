@@ -1,0 +1,23 @@
+.technologiesContainer {
+  padding: 0px 50px;
+  margin-top: 10%;
+}
+.technologiesContainer h1 {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 20px;
+  text-decoration: underline;
+}
+.technologiesContainer p {
+  font-size: x-large;
+}
+.techlists {
+  display: flex;
+  justify-content: start;
+}
+.techlists ul {
+  list-style-type: "-";
+  font-size: x-large;
+  padding-right: 30%;
+  padding-inline-start: 12px;
+}

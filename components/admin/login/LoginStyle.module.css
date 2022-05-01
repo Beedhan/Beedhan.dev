@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.container input {
+  padding: 10px;
+  border: 2px solid tomato;
+  outline: none;
+  border-radius: 5px;
+}
+.loginButton {
+  border: none;
+  padding: 10px 30px;
+  background-color: tomato;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  font-size: large;
+  margin: 20px auto;
+  cursor: pointer;
+}
+.loginButton:hover {
+  outline: 1px solid red;
+  background-color: tomato;
+}
