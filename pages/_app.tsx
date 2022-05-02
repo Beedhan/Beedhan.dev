@@ -6,6 +6,24 @@ import { Toaster } from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  const routeChange = () => {
+    // Temporary fix to avoid flash of unstyled content
+    // during route transitions. Keep an eye on this
+    // issue and remove this code when resolved:
+    // https://github.com/vercel/next.js/issues/17464
+
+    const tempFix = () => {
+      const allStyleElems = document.querySelectorAll('style[media="x"]');
+      allStyleElems.forEach((elem) => {
+        elem.removeAttribute("media");
+      });
+    };
+    tempFix();
+  };
+
+  router.events.on("routeChangeComplete", routeChange);
+  router.events.on("routeChangeStart", routeChange);
+
   return (
     <>
       <Toaster />
@@ -29,7 +47,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             },
             pageExit: {
               opacity: 0,
-              y: 100,
+              y: -100,
               x: 0,
             },
           }}
