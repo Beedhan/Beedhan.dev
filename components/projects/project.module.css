@@ -1,9 +1,10 @@
 .projectCard {
   display: flex;
   justify-content: space-between;
-  padding: 2% 7%;
-  background-color: tomato;
+  padding: 20px 25px;
+  background-color: #947bd3;
   color: white;
-  margin: 20px 0px;
-  border-radius: 20px;
+  margin: 15px 0px;
+  border-radius: 5px;
+  width: 70%;
 }

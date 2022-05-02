@@ -4,6 +4,11 @@ body {
   margin: 0;
   font-family: JetBrains Mono;
   box-sizing: border-box;
+  background-color: #272838;
+
+  background: linear-gradient(90deg, #272838 25px, transparent 100%) center,
+    linear-gradient(#272839 25px, transparent 100%) center, #987bea;
+  background-size: 27px 27px;
 }
 
 a {

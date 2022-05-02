@@ -10,9 +10,13 @@ const HeroSection: NextPage = () => {
           Hei,Hei
           <HeyEmoji />
         </h1>
-        <h1>{`I'm Beedhan`}</h1>
+        <h1 className={styles.nameContainer}>
+          {`I'm`} <span className={styles.myName}>Beedhan</span>
+        </h1>
         <br />
-        <a href="#">Contact Me</a>
+        <a href="#" className={styles.contact}>
+          Contact Me 😙
+        </a>
       </div>
     </div>
   );

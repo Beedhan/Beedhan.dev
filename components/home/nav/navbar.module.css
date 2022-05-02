@@ -1,6 +1,8 @@
 .nav {
   width: 100%;
   padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+  z-index: 999;
 }
 .navcontainer {
   display: flex;
@@ -14,6 +16,6 @@
   color: #949494;
 }
 .navcontainer .active {
-  color: #292929;
+  color: #ffffff;
   font-size: 25px;
 }

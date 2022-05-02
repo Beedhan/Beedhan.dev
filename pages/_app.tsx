@@ -4,30 +4,41 @@ import Navbar from "../components/home/nav/navbar";
 import Footer from "../components/footer/Footer";
 import { Toaster } from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
+
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <AnimatePresence>
+    <>
       <Toaster />
       <Navbar />
-      <motion.div
-        key={router.route}
-        initial="pageInitial"
-        animate="pageAnimate"
-        variants={{
-          pageInitial: {
-            opacity: 0,
-            y: "100px",
-          },
-          pageAnimate: {
-            opacity: 1,
-            y: "0px",
-          },
-        }}
-      >
-        <Component {...pageProps} />
-      </motion.div>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={router.route}
+          initial="pageInitial"
+          animate="pageAnimate"
+          exit="pageExit"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+              x: -200,
+              y: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+              x: 0,
+              y: 0,
+            },
+            pageExit: {
+              opacity: 0,
+              x: 100,
+              y: 0,
+            },
+          }}
+        >
+          <Component {...pageProps} />
+        </motion.div>
+      </AnimatePresence>
       <Footer />
-    </AnimatePresence>
+    </>
   );
 }
 

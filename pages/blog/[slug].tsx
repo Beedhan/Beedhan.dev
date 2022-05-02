@@ -4,7 +4,8 @@ import BlogHead from "../../components/blog_post/BlogHead";
 import { blog } from "../../utils/MyTypes";
 import supabase from "../../utils/SupabaseClient";
 import md from "markdown-it";
-
+import Head from "next/head";
+import styles from "../../components/blog_post/blog.module.css";
 type Posts = {
   blog: blog;
   success: boolean;
@@ -15,10 +16,19 @@ interface Slugs extends ParsedUrlQuery {
 
 const BlogPost: NextPage<Posts> = ({ blog, success }) => {
   return (
-    <div style={{ width: "60%", margin: "auto" }}>
-      <BlogHead title={blog.title} date={blog.created_at} />
-      <div dangerouslySetInnerHTML={{ __html: md().render(blog.body) }} />
-    </div>
+    <>
+      <Head>
+        <title>{blog.title}</title>
+      </Head>
+      <div style={{ width: "60%", margin: "auto" }}>
+        <BlogHead title={blog.title} date={blog.created_at} />
+        <div
+          style={{ color: "whitesmoke" }}
+          className={styles.blogBody}
+          dangerouslySetInnerHTML={{ __html: md().render(blog.body) }}
+        />
+      </div>
+    </>
   );
 };
 

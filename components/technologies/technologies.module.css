@@ -7,9 +7,11 @@
   font-size: 50px;
   line-height: 20px;
   text-decoration: underline;
+  color: whitesmoke;
 }
 .technologiesContainer p {
   font-size: x-large;
+  color: whitesmoke;
 }
 .techlists {
   display: flex;
@@ -20,4 +22,5 @@
   font-size: x-large;
   padding-right: 30%;
   padding-inline-start: 12px;
+  color: whitesmoke;
 }
