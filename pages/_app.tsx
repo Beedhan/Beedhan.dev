@@ -4,6 +4,7 @@ import Navbar from "../components/home/nav/navbar";
 import Footer from "../components/footer/Footer";
 import { Toaster } from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
+import Router from "next/router";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const routeChange = () => {
@@ -21,8 +22,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     tempFix();
   };
 
-  router.events.on("routeChangeComplete", routeChange);
-  router.events.on("routeChangeStart", routeChange);
+  Router.events.on("routeChangeComplete", routeChange);
+  Router.events.on("routeChangeStart", routeChange);
 
   return (
     <>
