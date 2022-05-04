@@ -7,4 +7,8 @@
   margin: 15px 0px;
   border-radius: 5px;
   width: 70%;
+  transition: all 0.1s linear;
+}
+.projectCard:hover {
+  transform: scale(1.05);
 }
