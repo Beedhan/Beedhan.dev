@@ -3,6 +3,12 @@ import BlogCard from "@/components/Blog/BlogCard";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+    title:"Blogs - Beedhan",
+    description:"Blogs page",
+  }
 
 const BlogPage = () => {
   const blogDir = "blogs";
