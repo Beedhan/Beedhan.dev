@@ -33,7 +33,7 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
     <MotionConfig transition={{ duration: 0.2 }}>
       <motion.div
         ref={clickout as React.RefObject<HTMLDivElement>}
-        className={`p-4 bg-primary my-2 rounded transition-all cursor-pointer ${
+        className={`p-4 bg-primary my-2 rounded transition-all cursor-pointer w-full ${
           isOpen && "scale-105 my-4"
         } ${!isOpen && (selectedId !== data.id&&selectedId !== null)? "opacity-50":"opacity-100"}`}
         onClick={handleSelection}
@@ -59,7 +59,7 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
             >
               <motion.ul
                 ref={ref}
-                className="text-text-secondary list-disc p-4"
+                className="text-text-secondary list-disc px-5 py-3 md:p-4"
               >
                 {data.work.map((e, index) => (
                   <motion.li key={index}>{e}</motion.li>

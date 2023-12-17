@@ -9,7 +9,7 @@ const MainLayout = ({
   return (
     <div>
         <Nav/>
-        <div className='w-[75%] mx-auto'>
+        <div className='w-full px-4 md:w-[75%] mx-auto'>
         {children}
         </div>
     </div>
