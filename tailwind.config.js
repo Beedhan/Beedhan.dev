@@ -21,5 +21,5 @@ module.exports = {
       "Roboto-Slab":['Roboto Slab', 'serif'],
     }
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }
