@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
+    "@uidotdev/usehooks": "^2.4.1",
     "@uiw/react-md-editor": "3.25.6",
     "framer-motion": "^10.16.5",
     "markdown-it": "^13.0.2",

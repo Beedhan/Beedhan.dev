@@ -9,10 +9,10 @@ const Nav = () => {
           <Link href="/">About</Link>
         </li>
         <li className="hover:font-bold transition-all text-center">
-          <Link href="/">Projects</Link>
+          <Link href="/">Works</Link>
         </li>
         <li className="hover:font-bold transition-all text-center">
-          <Link href="/">Works</Link>
+          <Link href="/">Projects</Link>
         </li>
         <li className="hover:font-bold transition-all text-center">
           <Link href="/">Blogs</Link>
