@@ -15,7 +15,7 @@ type workprop = {
 const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
   const [isOpen, setIsOpen] = useState(false);
   const [ref, { height }] = useMeasure();
-  const clickout = useClickAway(() => {
+  const clickout = useClickAway<HTMLElement>(() => {
     setIsOpen(false);
     handleElementSelect(null);
   });
@@ -32,7 +32,7 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
   return (
     <MotionConfig transition={{ duration: 0.2 }}>
       <motion.div
-        ref={clickout}
+        ref={clickout as React.RefObject<HTMLDivElement>}
         className={`p-4 bg-primary my-2 rounded transition-all cursor-pointer ${
           isOpen && "scale-105 my-4"
         } ${!isOpen && (selectedId !== data.id&&selectedId !== null)? "opacity-50":"opacity-100"}`}
