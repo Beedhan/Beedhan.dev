@@ -8,6 +8,7 @@ type workprop = {
     company: string;
     work: string[];
     id: string;
+    time: string;
   };
   handleElementSelect: (id: string | null) => void;
   selectedId: string | null;
@@ -35,13 +36,27 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
         ref={clickout as React.RefObject<HTMLDivElement>}
         className={`p-4 bg-primary my-2 rounded transition-all cursor-pointer w-full ${
           isOpen && "scale-105 my-4"
-        } ${!isOpen && (selectedId !== data.id&&selectedId !== null)? "opacity-50":"opacity-100"}`}
+        } ${
+          !isOpen && selectedId !== data.id && selectedId !== null
+            ? "opacity-50"
+            : "opacity-100"
+        }`}
         onClick={handleSelection}
       >
-        <motion.p className="text-text-secondary font-Roboto-Slab">
-          {data.title}
-        </motion.p>
-        <motion.h3 className="font-semibold text-2xl">{data.company}</motion.h3>
+        <motion.div className="flex justify-between">
+          <motion.div>
+            <motion.p className="text-text-secondary font-Roboto-Slab">
+              {data.title}
+            </motion.p>
+            <motion.h3 className="font-semibold text-2xl">
+              {data.company}
+            </motion.h3>
+          </motion.div>
+          <motion.p className="text-text-secondary font-Roboto-Slab">
+            {data.time}
+          </motion.p>
+        </motion.div>
+
         <AnimatePresence>
           {isOpen && (
             <motion.div

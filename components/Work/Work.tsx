@@ -14,6 +14,7 @@ const Work = () => {
         "Worked on multiple wordpress websites including ecommerce site",
         "Helped setting up shopify store for a client",
       ],
+      time:"2020-Current",
       id: useId(),
     },
     {
@@ -22,6 +23,7 @@ const Work = () => {
       work: [
         "Developed full stack food ordering app for restaurant using React. React Native. Laravel",
       ],
+      time:"2019-Current",
       id: useId(),
     },
     {
@@ -31,6 +33,7 @@ const Work = () => {
         "Developed website for agency.",
         "Taught Frontend Development to students, creating lesson plans and delivering engaging lectures.",
       ],
+      time:"2019-2020",
       id: useId(),
     },
   ];

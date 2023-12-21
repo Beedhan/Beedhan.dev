@@ -1,5 +1,7 @@
 import Blogs from "@/components/Blog/Blogs";
+import Footer from "@/components/Footer/footer";
 import Hero from "@/components/Hero/Hero";
+import Projects from "@/components/Project/Projects";
 import Work from "@/components/Work/Work";
 import { Metadata } from "next";
 import React from "react";
@@ -10,11 +12,13 @@ export const metadata:Metadata = {
 }
 const Home = () => {
   return (
-    <div>
+    <>
       <Hero />
       <Work />
+      <Projects/>
       <Blogs />
-    </div>
+      <Footer/>
+    </>
   );
 };
 

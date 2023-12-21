@@ -1,0 +1,6 @@
+.post h1 {
+    @apply text-4xl font-bold mt-10;
+}
+.description {
+    @apply text-lg mb-10 text-text-secondary;
+}

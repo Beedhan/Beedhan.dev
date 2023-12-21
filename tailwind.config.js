@@ -19,6 +19,7 @@ module.exports = {
     fontFamily:{
       'Poppins':['Poppins', 'sans-serif'],
       "Roboto-Slab":['Roboto Slab', 'serif'],
+      "Clash-Display":['Clash Display', 'serif'],
     }
   },
   plugins: [require("@tailwindcss/typography")],

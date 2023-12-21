@@ -5,10 +5,10 @@ import path from "path";
 import matter from "gray-matter";
 import { Metadata } from "next";
 
-export const metadata:Metadata = {
-    title:"Blogs - Beedhan",
-    description:"Blogs page",
-  }
+export const metadata: Metadata = {
+  title: "Blogs - Beedhan",
+  description: "Blogs page",
+};
 
 const BlogPage = () => {
   const blogDir = "blogs";
@@ -22,12 +22,16 @@ const BlogPage = () => {
     };
   });
   return (
-    <div>
-      <h1 className="text-6xl font-bold mb-4">Blogs</h1>
-      {blogs.map((blog) => (
-        <BlogCard meta={blog.meta} slug={blog.slug} key={blog.slug} />
-      ))}
-    </div>
+    <>
+      {blogs.length > 0 && (
+        <div>
+          <h1 className="text-6xl font-bold mb-4">Blogs</h1>
+          {blogs.map((blog) => (
+            <BlogCard meta={blog.meta} slug={blog.slug} key={blog.slug} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
