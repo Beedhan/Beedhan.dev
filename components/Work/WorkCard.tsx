@@ -45,14 +45,14 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
       >
         <motion.div className="flex justify-between">
           <motion.div>
-            <motion.p className="text-text-secondary font-Roboto-Slab">
+            <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
               {data.title}
             </motion.p>
-            <motion.h3 className="font-semibold text-2xl">
+            <motion.h3 className="font-semibold text-xl md:text-2xl">
               {data.company}
             </motion.h3>
           </motion.div>
-          <motion.p className="text-text-secondary font-Roboto-Slab">
+          <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
             {data.time}
           </motion.p>
         </motion.div>
