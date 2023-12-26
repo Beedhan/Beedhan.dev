@@ -37,18 +37,18 @@ export async function generateMetadata({ params }: any) {
 const page = ({ params }: any) => {
   const props = getPost(params);
   return (
-    <article className={Style.post}>
-      <div className="flex items-end gap-5">
-        <h1>{props.frontMatter.title}</h1>
+    <article className="prose prose-invert mt-5">
+      <div className="flex gap-5 ">
+        <h1 className=" m-0">{props.frontMatter.title}</h1>
         <a
-          className="underline"
+          className="underline mt-3"
           href={`https://${props.frontMatter.preview}.${process.env.HOSTED_URL}`}
           target="_blank"
         >
           Preview
         </a>
       </div>
-        <p className={Style.description}>{props.frontMatter.description}</p>
+        <p className="text-text-secondary">{props.frontMatter.description}</p>
       <MDXRemote source={props.content} />
     </article>
   );

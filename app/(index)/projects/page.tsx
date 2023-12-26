@@ -21,7 +21,7 @@ const ProjectsPage = () => {
       meta: frontMatter,
       slug: filename.replace(".mdx", ""),
     };
-  });
+  }).slice(0,5);
   return (
     <div>
       <h1 className="text-6xl font-bold mb-4">Projects</h1>
