@@ -6,9 +6,9 @@ type projectcardprops = {
   meta: {
     [key: string]: any;
   };
-  slug:string
+  slug: string;
 };
-const ProjectCard = ({ meta,slug }: projectcardprops) => {
+const ProjectCard = ({ meta, slug }: projectcardprops) => {
   return (
     <Link href={"/projects/" + slug}>
       <div className="p-4 bg-primary my-2 rounded transition-all cursor-pointer w-full">
@@ -17,6 +17,16 @@ const ProjectCard = ({ meta,slug }: projectcardprops) => {
           <p className="font-Roboto-Slab text-text-secondary text-sm md:text-lg">
             {meta.description}
           </p>
+        </div>
+        <div className="mt-2">
+          {meta.technology.map((tech: string) => (
+            <span
+              className="bg-secondary text-text-secondary font-semibold text-sm px-2 py-1 rounded-full mr-1 hover:bg-tertiary hover:text-primary"
+              key={tech}
+            >
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
     </Link>

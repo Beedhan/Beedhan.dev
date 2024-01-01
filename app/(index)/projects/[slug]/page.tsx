@@ -39,7 +39,9 @@ const page = ({ params }: any) => {
   return (
     <article className="prose prose-invert mt-5">
       <div className="flex gap-5 ">
-        <h1 className=" m-0">{props.frontMatter.title}</h1>
+        <h1 className="text-5xl m-0 text-tertiary">
+          {props.frontMatter.title}
+        </h1>
         <a
           className="underline mt-3"
           href={`https://${props.frontMatter.preview}.${process.env.HOSTED_URL}`}
@@ -48,7 +50,21 @@ const page = ({ params }: any) => {
           Preview
         </a>
       </div>
-        <p className="text-text-secondary">{props.frontMatter.description}</p>
+      <p className="text-text-secondary">{props.frontMatter.description}</p>
+      {props.frontMatter.collaborators && (
+        <>
+          <h2 className="m-0 p-0">Collaborator</h2>
+          <ul className="flex list-none p-0 m-0 gap-2">
+            {props.frontMatter.collaborators.map((collaborator: any) => (
+              <li key={collaborator}>
+                <a href={`https://github.com/${collaborator}`} target="_blank">
+                  {collaborator}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
       <MDXRemote source={props.content} />
     </article>
   );

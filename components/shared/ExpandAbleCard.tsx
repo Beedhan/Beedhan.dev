@@ -56,11 +56,24 @@ const ExpandAbleCard = ({
               {data.subTitle}
             </motion.p>
             <motion.div className="flex gap-3 items-center">
-              <motion.h3 className="font-semibold text-xl md:text-2xl">
+              <motion.h3
+                className={`font-semibold text-xl md:text-2xl ${
+                  isOpen ? "text-tertiary" : ""
+                }`}
+              >
                 {data.title}
               </motion.h3>
               {data.link && (
-                <a href={data.link} target="_blank" rel="noreferrer">
+                <a
+                  href={data.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`transition-all ${
+                    isOpen
+                      ? "-translate-y-2 translate-x-3 text-tertiary"
+                      : "translate-y-0 translate-x-0"
+                  }`}
+                >
                   <FiExternalLink />
                 </a>
               )}

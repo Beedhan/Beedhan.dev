@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="flex mt-20 jusfity-between w-full">
       <div className=" flex flex-col gap-3">
         <h1 className="text-4xl font-bold md:text-6xl">
-          Bidhan <span className="text-blue-500">Bhuwai</span>
+          Bidhan <span className="text-tertiary">Bhuwai</span>
         </h1>
         <h2 className="text-lg font-Roboto-Slab">Full Stack Developer</h2>
         <p className="text-md text-text-secondary w-full ">
