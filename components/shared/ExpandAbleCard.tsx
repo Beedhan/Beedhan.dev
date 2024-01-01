@@ -2,18 +2,25 @@
 import React, { useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useMeasure, useClickAway } from "@uidotdev/usehooks";
+import { FiExternalLink } from "react-icons/fi";
+
 type workprop = {
   data: {
+    subTitle: string;
     title: string;
-    company: string;
-    work: string[];
+    description: string[] | string;
     id: string;
-    time: string;
+    time?: string;
+    link?: string;
   };
   handleElementSelect: (id: string | null) => void;
   selectedId: string | null;
 };
-const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
+const ExpandAbleCard = ({
+  data,
+  handleElementSelect,
+  selectedId,
+}: workprop) => {
   const [isOpen, setIsOpen] = useState(false);
   const [ref, { height }] = useMeasure();
   const clickout = useClickAway<HTMLElement>(() => {
@@ -46,15 +53,24 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
         <motion.div className="flex justify-between">
           <motion.div>
             <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
-              {data.title}
+              {data.subTitle}
             </motion.p>
-            <motion.h3 className="font-semibold text-xl md:text-2xl">
-              {data.company}
-            </motion.h3>
+            <motion.div className="flex gap-3 items-center">
+              <motion.h3 className="font-semibold text-xl md:text-2xl">
+                {data.title}
+              </motion.h3>
+              {data.link && (
+                <a href={data.link} target="_blank" rel="noreferrer">
+                  <FiExternalLink />
+                </a>
+              )}
+            </motion.div>
           </motion.div>
-          <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
-            {data.time}
-          </motion.p>
+          {data.time && (
+            <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
+              {data.time}
+            </motion.p>
+          )}
         </motion.div>
 
         <AnimatePresence>
@@ -72,14 +88,24 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
               }}
               className="overflow-hidden"
             >
-              <motion.ul
-                ref={ref}
-                className="text-text-secondary list-disc px-5 py-3 md:p-4"
-              >
-                {data.work.map((e, index) => (
-                  <motion.li key={index}>{e}</motion.li>
-                ))}
-              </motion.ul>
+              {typeof data.description === "object" && (
+                <motion.ul
+                  ref={ref}
+                  className="text-text-secondary list-disc px-5 py-3 md:p-4"
+                >
+                  {data.description.map((e, index) => (
+                    <motion.li key={index}>{e}</motion.li>
+                  ))}
+                </motion.ul>
+              )}
+              {typeof data.description === "string" && (
+                <motion.p
+                  ref={ref}
+                  className="text-text-secondary px-5 py-3 md:p-4"
+                >
+                  {data.description}
+                </motion.p>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -88,4 +114,4 @@ const WorkCard = ({ data, handleElementSelect, selectedId }: workprop) => {
   );
 };
 
-export default WorkCard;
+export default ExpandAbleCard;
