@@ -49,6 +49,13 @@ const page = ({ params }: any) => {
         >
           Preview
         </a>
+        <a
+          className="underline mt-3"
+          href={`https://github.com/beedhan/${props.frontMatter.github}`}
+          target="_blank"
+        >
+          Github
+        </a>
       </div>
       <p className="text-text-secondary">{props.frontMatter.description}</p>
       {props.frontMatter.collaborators && (

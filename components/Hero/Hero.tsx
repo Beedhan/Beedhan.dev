@@ -2,9 +2,9 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="flex mt-20 jusfity-between w-full">
+    <div className="flex mt-10 jusfity-between w-full">
       <div className=" flex flex-col gap-3">
-        <h1 className="text-4xl font-bold md:text-6xl">
+        <h1 className="text-4xl font-bold lg:text-6xl">
           Bidhan <span className="text-tertiary">Bhuwai</span>
         </h1>
         <h2 className="text-lg font-Roboto-Slab">Full Stack Developer</h2>

@@ -1,25 +1,25 @@
 import Link from "next/link";
 import React from "react";
 
+const links = [
+  { href: "/", title: "About" },
+  { href: "/#experiences", title: "Experiences" },
+  { href: "/projects", title: "Projects" },
+  { href: "/#works", title: "Works" },
+  // { href: "/blogs", title: "Blogs" },
+];
 const Nav = () => {
   return (
-    <nav className="w-full flex justify-center py-5 text-md">
-      <ul className="flex items-center justify-between text-center gap-4 md:gap-8 bg-primary px-5 py-3 rounded-full">
-        <li className="hover:font-bold transition-all text-center ">
-          <Link href="/">About</Link>
-        </li>
-        <li className="hover:font-bold transition-all text-center">
-          <Link href="/#experiences">Experiences</Link>
-        </li>
-        <li className="hover:font-bold transition-all text-center">
-          <Link href="/projects">Projects</Link>
-        </li>
-        <li className="hover:font-bold transition-all text-center">
-          <Link href="/#works">Works</Link>
-        </li>
-        <li className="hover:font-bold transition-all text-center">
-          <Link href="/blogs">Blogs</Link>
-        </li>
+    <nav className="w-full flex justify-center py-5 text-md sticky top-0">
+      <ul className="flex items-center justify-between text-center gap-3 md:gap-5 bg-primary px-5 py-3 rounded-full">
+        {links.map((link, index) => (
+          <li
+            className="hover:font-bold transition-all text-center "
+            key={index}
+          >
+            <Link href={link.href}>{link.title}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

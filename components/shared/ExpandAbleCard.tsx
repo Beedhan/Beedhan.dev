@@ -52,12 +52,12 @@ const ExpandAbleCard = ({
       >
         <motion.div className="flex justify-between">
           <motion.div>
-            <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
+            <motion.p className="text-text-secondary font-Roboto-Slab text-sm lg:text-md">
               {data.subTitle}
             </motion.p>
             <motion.div className="flex gap-3 items-center">
               <motion.h3
-                className={`font-semibold text-xl md:text-2xl ${
+                className={`font-semibold text-lg lg:text-2xl md:text-xl ${
                   isOpen ? "text-tertiary" : ""
                 }`}
               >
@@ -80,7 +80,7 @@ const ExpandAbleCard = ({
             </motion.div>
           </motion.div>
           {data.time && (
-            <motion.p className="text-text-secondary font-Roboto-Slab text-sm md:text-lg">
+            <motion.p className="text-text-secondary font-Roboto-Slab text-sm lg:text-md">
               {data.time}
             </motion.p>
           )}
@@ -104,7 +104,7 @@ const ExpandAbleCard = ({
               {typeof data.description === "object" && (
                 <motion.ul
                   ref={ref}
-                  className="text-text-secondary list-disc px-5 py-3 md:p-4"
+                  className="text-text-secondary list-disc px-5 py-3 lg:p-4"
                 >
                   {data.description.map((e, index) => (
                     <motion.li key={index}>{e}</motion.li>
@@ -114,7 +114,7 @@ const ExpandAbleCard = ({
               {typeof data.description === "string" && (
                 <motion.p
                   ref={ref}
-                  className="text-text-secondary px-5 py-3 md:p-4"
+                  className="text-text-secondary px-5 py-3 lg:p-4"
                 >
                   {data.description}
                 </motion.p>
