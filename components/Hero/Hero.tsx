@@ -9,7 +9,7 @@ const Hero = () => {
         </h1>
         <h2 className="text-lg font-Roboto-Slab">Full Stack Developer</h2>
         <p className="text-md text-text-secondary w-full ">
-          I began my journey in game development at the age of 16. Now, I am a
+          I began my journey with game development at the age of 16. Now, I am a
           full-stack developer with expertise in both front-end and back-end
           development.
         </p>
