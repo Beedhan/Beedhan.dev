@@ -3,6 +3,13 @@ const removeImports = require("next-remove-imports")();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   experimental: {
     mdxRs: true,
