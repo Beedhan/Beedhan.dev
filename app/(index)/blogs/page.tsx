@@ -25,7 +25,7 @@ const BlogPage = () => {
     <>
       {blogs.length > 0 && (
         <div>
-          <h1 className="text-6xl font-bold mb-4">Blogs</h1>
+          <h1 className="text-6xl font-bold mb-4 mt-4">Blogs</h1>
           {blogs.map((blog) => (
             <BlogCard meta={blog.meta} slug={blog.slug} key={blog.slug} />
           ))}

@@ -21,7 +21,6 @@ const Home = () => {
       <WorkedProjects />
       <Skills />
       <Blogs />
-      <Footer />
     </>
   );
 };

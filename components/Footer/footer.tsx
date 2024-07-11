@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
-    <div className="flex justify-between pb-5 pt-4 border-t-2 border-text-secondary">
+    <div className="flex justify-between mb-14 md:mb-0 py-6 border-t-2 border-text-secondary">
       {/* https://www.nexxel.dev/ for the idea */}
       <p>Bidhan Bhuwai</p>
       <div className="flex gap-3">
