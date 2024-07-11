@@ -12,6 +12,7 @@ type workprop = {
     id: string;
     time?: string;
     link?: string;
+    tech?: string[];
   };
   handleElementSelect: (id: string | null) => void;
   selectedId: string | null;
@@ -55,6 +56,7 @@ const ExpandAbleCard = ({
             <motion.p className="text-text-secondary font-Roboto-Slab text-sm lg:text-md">
               {data.subTitle}
             </motion.p>
+
             <motion.div className="flex gap-3 items-center">
               <motion.h3
                 className={`font-semibold text-lg lg:text-2xl md:text-xl ${
@@ -85,7 +87,18 @@ const ExpandAbleCard = ({
             </motion.p>
           )}
         </motion.div>
-
+        {data.tech && (
+          <div className="mt-2 flex gap-1 flex-wrap">
+            {data.tech.map((tech: string) => (
+              <span
+                className="bg-secondary text-text-secondary font-semibold text-sm px-2 py-1 rounded-full hover:bg-tertiary hover:text-primary "
+                key={tech}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
         <AnimatePresence>
           {isOpen && (
             <motion.div
