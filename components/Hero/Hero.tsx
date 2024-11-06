@@ -13,6 +13,9 @@ const Hero = () => {
           full-stack developer with expertise in both front-end and back-end
           development.
         </p>
+        <a href="/Beedhan_Resume.pdf" className="text-tertiary">
+          Download Resume
+        </a>
       </div>
     </div>
   );
