@@ -33,6 +33,18 @@ export async function generateMetadata({ params }: any) {
   return {
     title: project.frontMatter.title,
     description: project.frontMatter.description,
+    openGraph: {
+      title: project.frontMatter.title,
+      description: project.frontMatter.description,
+      url: `https://${project.frontMatter.preview}.${process.env.HOSTED_URL}`,
+      images: [
+        {
+          url: project.frontMatter.screenshot,
+          width: 1080,
+          height: 720,
+        },
+      ],
+    },
   };
 }
 const page = ({ params }: any) => {
