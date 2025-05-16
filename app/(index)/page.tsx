@@ -11,6 +11,18 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Home - Beedhan",
   description: "Portfolio website of Beedhan Bhuwai",
+  openGraph: {
+    title: "Home - Beedhan",
+    description: "Portfolio website of Beedhan Bhuwai",
+    url: "https://beedhan.dev",
+    images: [
+      {
+        url: "https://res.cloudinary.com/beedhan/image/upload/v1747406919/Beedhan.dev.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 const Home = () => {
   return (
